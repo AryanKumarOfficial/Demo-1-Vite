@@ -1,15 +1,12 @@
-import { useEffect } from "react";
 import "./App.css";
-
+import Home from "../Components/Home";
+import { Router, Route } from "react-router-dom";
 const App = () => {
-  useEffect(() => {
-    document.title = "React Counter";
-  }, []);
   return (
     <>
-      <section>
-        <h1>React Counter</h1>
-      </section>
+      <Router>
+        <Route path="/" component={Home} />
+      </Router>
     </>
   );
 };
