@@ -1,0 +1,29 @@
+.navbar {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #e9ecef;
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .logo {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #007bff;
+    text-decoration: none;
+}
+
+ul.links {
+    display: flex;
+    gap: 1rem;
+}
+
+ul.links li {
+    list-style: none;
+}
+
+ul.links li a {
+    text-decoration: none;
+    color: #007bff;
+}

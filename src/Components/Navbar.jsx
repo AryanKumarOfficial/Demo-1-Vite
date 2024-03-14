@@ -1,14 +1,26 @@
+import { Link, Outlet } from "react-router-dom";
+import "../styles/Navbar.css";
+
 const Navbar = () => {
   return (
     <>
-      <nav className="navbar !bg-green-600">
-        <h1>The Dojo Blog</h1>
-        <div className="links">
-          <a href="/">Home</a>
-          <a href="/about">About</a>
-          <a href="/services">Services</a>
-        </div>
+      <nav>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="about">About</Link>
+          </li>
+          <li>
+            <Link to="contact">Contact</Link>
+          </li>
+          <li>
+            <Link to="users">Users</Link>
+          </li>
+        </ul>
       </nav>
+      <Outlet />
     </>
   );
 };
