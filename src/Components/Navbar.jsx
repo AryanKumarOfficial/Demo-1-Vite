@@ -1,24 +1,33 @@
-import { Link, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import "../styles/Navbar.css";
 
 const Navbar = () => {
   return (
     <>
       <nav>
+        <div className="logo">
+          <a href={`/`}>
+            <h1>React Router</h1>
+          </a>
+        </div>
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <a href="/">Home</a>
           </li>
           <li>
-            <Link to="about">About</Link>
+            <a href="about">About</a>
           </li>
           <li>
-            <Link to="contact">Contact</Link>
+            <a href="contact">Contact</a>
           </li>
           <li>
-            <Link to="users">Users</Link>
+            <a href="users">Users</a>
           </li>
         </ul>
+        <div className="action">
+          <a href="login">Login</a>
+          <a href={`profile`}>Profile</a>
+        </div>
       </nav>
       <Outlet />
     </>
