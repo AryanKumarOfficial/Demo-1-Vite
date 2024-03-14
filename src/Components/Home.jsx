@@ -1,14 +1,13 @@
 import { useEffect } from "react";
-import "../src/App.css";
 
 const Home = () => {
   useEffect(() => {
     document.title = "Home";
   }, []);
   return (
-    <div>
+    <section className="container">
       <h1>Home</h1>
-    </div>
+    </section>
   );
 };
 
