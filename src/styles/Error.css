@@ -33,3 +33,17 @@ section#error-page a {
 section#error-page a:hover {
     background-color: #2980b9;
 }
+
+@media screen and (max-width: 768px) {
+    section#error-page h1 {
+        font-size: 6rem;
+    }
+
+    section#error-page p {
+        font-size: 1.5rem;
+    }
+
+    section#error-page a {
+        font-size: 1rem;
+    }
+}
