@@ -8,7 +8,9 @@ const Navbar = () => {
         <div className="logo">
           <NavLink
             className={(e) => {
-              return e.isActive ? "text-red-500" : "";
+              return `${
+                e.isActive ? "text-red-500" : ""
+              } transition-all duration-300 ease-in-out`;
             }}
             to={`/`}
           >
@@ -19,7 +21,9 @@ const Navbar = () => {
           <li>
             <NavLink
               className={(e) => {
-                return e.isActive ? "text-red-500" : "";
+                return `${
+                  e.isActive ? "text-red-500" : ""
+                } transition-all duration-300 ease-in-out`;
               }}
               to="/"
             >
@@ -29,7 +33,9 @@ const Navbar = () => {
           <li>
             <NavLink
               className={(e) => {
-                return e.isActive ? "text-red-500" : "";
+                return `${
+                  e.isActive ? "text-red-500" : ""
+                } transition-all duration-300 ease-in-out`;
               }}
               to="about"
             >
@@ -39,7 +45,9 @@ const Navbar = () => {
           <li>
             <NavLink
               className={(e) => {
-                return e.isActive ? "text-red-500" : "";
+                return `${
+                  e.isActive ? "text-red-500" : ""
+                } transition-all duration-300 ease-in-out`;
               }}
               to="contact"
             >
@@ -53,7 +61,9 @@ const Navbar = () => {
         <div className="action">
           <NavLink
             className={(e) => {
-              return e.isActive ? "text-red-500" : "";
+              return `${
+                e.isActive ? "text-red-500" : ""
+              } transition-all duration-300 ease-in-out`;
             }}
             to="login"
           >
@@ -61,7 +71,9 @@ const Navbar = () => {
           </NavLink>
           <NavLink
             className={(e) => {
-              return e.isActive ? "text-red-500" : "";
+              return `${
+                e.isActive ? "text-red-500" : ""
+              } transition-all duration-300 ease-in-out`;
             }}
             to={`profile`}
           >
