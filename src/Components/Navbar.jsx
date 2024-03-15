@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "../styles/Navbar.css";
 
 const Navbar = () => {
@@ -6,30 +6,70 @@ const Navbar = () => {
     <>
       <nav>
         <div className="logo">
-          <a href={`/`}>
+          <NavLink
+            className={(e) => {
+              return e.isActive ? "text-red-500" : "";
+            }}
+            to={`/`}
+          >
             <h1>React Router</h1>
-          </a>
+          </NavLink>
         </div>
         <ul>
           <li>
-            <a href="/">Home</a>
+            <NavLink
+              className={(e) => {
+                return e.isActive ? "text-red-500" : "";
+              }}
+              to="/"
+            >
+              Home
+            </NavLink>
           </li>
           <li>
-            <a href="about">About</a>
+            <NavLink
+              className={(e) => {
+                return e.isActive ? "text-red-500" : "";
+              }}
+              to="about"
+            >
+              About
+            </NavLink>
           </li>
           <li>
-            <a href="contact">Contact</a>
+            <NavLink
+              className={(e) => {
+                return e.isActive ? "text-red-500" : "";
+              }}
+              to="contact"
+            >
+              Contact
+            </NavLink>
           </li>
-          <li>
-            <a href="users">Users</a>
-          </li>
+          {/* <li>
+            <Link to="users">Users</Link>
+          </li> */}
         </ul>
         <div className="action">
-          <a href="login">Login</a>
-          <a href={`profile`}>Profile</a>
+          <NavLink
+            className={(e) => {
+              return e.isActive ? "text-red-500" : "";
+            }}
+            to="login"
+          >
+            Login
+          </NavLink>
+          <NavLink
+            className={(e) => {
+              return e.isActive ? "text-red-500" : "";
+            }}
+            to={`profile`}
+          >
+            Profile
+          </NavLink>
         </div>
       </nav>
-      <Outlet />
+      {/* <Outlet /> */}
     </>
   );
 };

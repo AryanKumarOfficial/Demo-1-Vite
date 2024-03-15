@@ -5,8 +5,8 @@ const Home = () => {
     document.title = "Home";
   }, []);
   return (
-    <section className="container">
-      <h1 className="text-black">Home</h1>
+    <section className="container mx-auto flex justify-center items-center my-auto h-screen">
+      <h1 className="text-black font-bold text-5xl">Home</h1>
     </section>
   );
 };
