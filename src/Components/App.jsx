@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import LoadingBar from "react-top-loading-bar";
 import Navbar from "./Navbar";
 import { Outlet } from "react-router-dom";
+import { Toaster } from "react-hot-toast";
 
 const App = () => {
   const [progress, setProgress] = useState(0);
@@ -41,6 +42,7 @@ const App = () => {
         height={3}
         shadow={true}
       />
+      <Toaster position="top-center" />
       <Navbar />
       <Outlet />
     </>

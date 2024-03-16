@@ -8,6 +8,7 @@ import Home from "./Components/Home";
 import ErrorPage from "./Components/ErrorPage";
 import About from "./Components/About";
 import Contact from "./Components/Contact";
+import Login from "./Components/Login";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,14 @@ const router = createBrowserRouter([
         path: "*",
         element: <ErrorPage />,
       },
+      {
+        path: "404",
+        element: <ErrorPage />,
+      },
+      {
+        path:"/login",
+        element:<Login/>
+      }
     ],
   },
 ]);

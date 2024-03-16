@@ -213,7 +213,7 @@ const Navbar = () => {
         </li>
       </ul>
       <div className="action">
-        {authenticated ? (
+        {!authenticated ? (
           <NavLink
             to="/login"
             className={(e) => {
