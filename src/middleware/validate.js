@@ -8,7 +8,7 @@ const passwordValidation = (password) => {
 };
 
 const inputValidation = (input) => {
-    return input.length > 0;
+    return !input;
 }
 
 export { emailValidation, passwordValidation, inputValidation };

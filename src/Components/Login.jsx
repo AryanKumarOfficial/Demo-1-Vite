@@ -11,7 +11,7 @@ const Login = () => {
   const [form, setForm] = useState({
     email: "",
     password: "",
-    checked: false,
+    remember: false,
   });
   useEffect(() => {
     document.title = "Login";
@@ -45,9 +45,40 @@ const Login = () => {
       toast.error("All fields are required");
       return;
     }
-    // if all the conditions are met, show a success message
 
-    toast.success("Logged in successfully");
+    const loginUser = async () => {
+      try {
+        const response = await fetch(
+          `${import.meta.env.VITE_API_HOST}/api/login`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(form),
+          }
+        );
+
+        const data = await response.json();
+        if (!data?.success) {
+          toast.error(data.message);
+          return;
+        } else {
+          if (data?.rememberMe) {
+            localStorage.setItem("token", data?.token);
+            toast.success("Logged in successfully");
+          } else {
+            sessionStorage.setItem("token", data?.token);
+            toast.success("Logged in successfully");
+          }
+        }
+        console.log(data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    loginUser();
   };
 
   return (
@@ -105,10 +136,10 @@ const Login = () => {
                 <input
                   type="checkbox"
                   id="remember"
-                  className="checked:accent-green-500 rounded-md mr-2 my-1 focus:outline-none transition-all duration-300 ease-in-out hover:accent-green-500"
-                  checked={form?.checked}
+                  className=" mr-2 w-5 h-5 rounded-md cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300 ease-in-out hover:bg-blue-500 hover:text-white c"
+                  checked={form?.remember}
                   onChange={onChange}
-                  name="checked"
+                  name="remember"
                 />
                 <span>Remember me</span>
               </label>
