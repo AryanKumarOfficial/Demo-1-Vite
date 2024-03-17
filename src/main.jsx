@@ -9,6 +9,8 @@ import ErrorPage from "./Components/ErrorPage";
 import About from "./Components/About";
 import Contact from "./Components/Contact";
 import Login from "./Components/Login";
+import AuthenticatedRoutes from "./Components/Authenticatedroutes";
+import ProtectedRoutes from "./Components/ProtectedRoutes";
 
 const router = createBrowserRouter([
   {
@@ -17,7 +19,13 @@ const router = createBrowserRouter([
     children: [
       {
         path: "",
-        element: <Home />,
+        element: (
+          <>
+            <ProtectedRoutes>
+              <Home />
+            </ProtectedRoutes>
+          </>
+        ),
       },
       {
         path: "about",
@@ -36,9 +44,15 @@ const router = createBrowserRouter([
         element: <ErrorPage />,
       },
       {
-        path:"/login",
-        element:<Login/>
-      }
+        path: "/login",
+        element: (
+          <>
+            <AuthenticatedRoutes>
+              <Login />
+            </AuthenticatedRoutes>
+          </>
+        ),
+      },
     ],
   },
 ]);

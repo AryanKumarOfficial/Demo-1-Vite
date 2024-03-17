@@ -13,6 +13,11 @@ const Navbar = () => {
   };
 
   useEffect(() => {
+    const isAuthenticated =
+      localStorage.getItem("token") || sessionStorage.getItem("token");
+    if (isAuthenticated) {
+      setAuthenticated(true);
+    }
     window.onclick = (e) => {
       if (
         e.target.closest(".menu") === null &&
@@ -156,10 +161,11 @@ const Navbar = () => {
                   // to="/logout"
                   className={`text-[#333] font-semibold`}
                   onClick={() => {
+                    localStorage.removeItem("token");
+                    sessionStorage.clear();
                     document
                       .querySelector(".sidebar")
                       .classList.toggle("active");
-                    setAuthenticated(false);
                   }}
                 >
                   Logout
